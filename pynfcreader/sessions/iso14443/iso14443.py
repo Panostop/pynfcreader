@@ -194,10 +194,11 @@ class Iso14443Session(object):
 
         resp = self._drv.write(data=tpdu, resp_len=16, transmitter_add_crc=add_crc)
 
-        resp = Tpdu(resp)
-        self._logger.info("\t\t" + "TPDU response:")
-        for hit in utils.get_pretty_print_block(resp.get_tpdu()):
-            self._logger.info("\t\t" + hit)
+        if resp:
+            resp = Tpdu(resp)
+            self._logger.info("\t\t" + "TPDU response:")
+            for hit in utils.get_pretty_print_block(resp.get_tpdu()):
+                self._logger.info("\t\t" + hit)
         return resp
 
     def send_apdu(self, apdu):
