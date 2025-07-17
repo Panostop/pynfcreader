@@ -194,7 +194,11 @@ class FlipperZero(Devices):
         self.cnx.write(f"nfc send {add_crc} {data.hex()}\r\n".encode())
         resp = bytes.fromhex(self.read_all().split("\r\n")[1])
 
-        self.__logger.debug(f"\t<{data.hex()}")
+        self.__logger.debug("read")
+        if resp:
+            self.__logger.debug(f"\t<{resp.hex()}")
+        else:
+            self.__logger.debug("\t[empty]")
         self.__logger.debug("")
 
         return resp
