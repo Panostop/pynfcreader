@@ -31,7 +31,7 @@ setuptools.setup(
     description="NFC reader",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/gvinet/pynfcreader",
+    url="https://github.com/Panostop/pynfcreader",
     packages=setuptools.find_packages(),
     install_requires=['pyHydrabus'],
     classifiers=[
