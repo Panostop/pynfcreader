@@ -169,7 +169,6 @@ class FlipperZero(Devices):
         r = self.read_all()
 
     def set_sak(self, sak: str):
-        assert sak in range(256)
         self.__logger.debug(f"set sak: {sak}")
         self.cnx.reset_input_buffer()
         self.cnx.reset_output_buffer()
